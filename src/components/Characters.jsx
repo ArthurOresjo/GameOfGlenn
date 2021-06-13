@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { actions } from "../features/characters";
 import { actions as actionsEdit } from "../features/editCharacter";
 // import hufvudstaden from "../components/assets/hufvudstaden.svg";
+import GOG from "../components/assets/GOG-Banner.svg";
 import "../App.css";
 import "../popup.css";
 import "../form.css";
@@ -87,7 +88,7 @@ const Characters = () => {
         <div className="world">
           <div className="world-text"> <span className="world-backs-card-col">VÄRLD: </span>{charItem.world} </div>
           <div className="world-pic">
-          <img className="world-pic-inside" src={`${charItem.world}.svg`} alt="Karta över Hisingen"></img>
+          <img className="world-pic-inside" src={process.env.PUBLIC_URL + `/${charItem.world}.svg`}  alt={`Karta över ${charItem.world}`}></img>
 				</div>
         </div>
         <textarea readOnly spellCheck="false" className="backstory" value={charItem.backstory}></textarea>
